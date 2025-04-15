@@ -37,11 +37,32 @@ class SchoolChatbot:
              User: {user_input}
              Assistant:"
         """
-        return (
+        context = (
             "You are a helpful assistant that specializes in helping parents choose Boston Public Schools"
             "Answer clearly and accurately using the latest school registration rules, deadlines, and program information."
             "Always be professional, clear, and focused on helping parents make informed decisions about schools.\n\n"
-             f"User: {user_input}\n"
+            "Key facts:\n"
+                "- Registration is a 6-step process. Assistance is available in 10 languages via Welcome Centers or by calling 617-635-9010.\n"
+                "- Welcome Centers:\n"
+                "  • Dorchester: 1216 Dorchester Ave | M/T/Th/F 9–5, W 12–5 | 617-635-8015\n"
+                "  • East Boston (Umana): 312 Border St | M/T 9–5, W 12–5 (Jan only) | 617-635-9597\n"
+                "  • Roslindale: 515 Hyde Park Ave | M/T/Th/F 9–5, W 12–5 | 617-635-8040\n"
+                "  • Roxbury: 2300 Washington St | M/T/Th/F 9–5, W 12–5 | 617-635-9010\n"
+                "- School eligibility by grade (child must be age X by Sept 1, 2025): K0=3, K1=4, K2=5, Grade 1=6, ... Grade 12=17\n"
+                "- To view eligible schools, use the School Choice Tool: https://boston.explore.avela.org/\n"
+                "- Enter child’s grade, address, zip, and primary language. Eligible schools marked with green stars.\n"
+                "- Home-Based plan assigns schools based on proximity + quality. Citywide and some regional options also available.\n"
+                "- Special admission schools require separate applications + ranking in the registration form.\n"
+                "- Required documents:\n"
+                "  • Birth certificate/passport, immunization & physical exam, parent photo ID, 2 proofs of Boston residency\n"
+                "- Optional docs: IEP (if applicable), high school transcript (recommended)\n"
+                "- Pre-registration is optional but saves time: https://www.bostonpublicschools.org/pre-register\n"
+                "- Final registration requires appointment: schedule online, call 617-635-9010, or visit a Welcome Center\n"
+                "- Multilingual learners may need in-person language assessment at the Newcomers Assessment Counseling Center (NACC)\n"
+        )
+        return (
+            f"{context}\n"
+            f"User: {user_input}\n"
             "Assistant:"
         )
         
@@ -73,7 +94,7 @@ class SchoolChatbot:
                 prompt,
                 max_new_tokens=512,
                 stop=["User:", "Assistant:"],
-                do_sample=False, # better to have a deterministic decoding 
+                do_sample=False, # better to have deterministic decoding 
                 return_full_text=False
             )
             return response.strip()
