@@ -59,10 +59,11 @@ def create_chatbot():
                 - Generate an appropriate response to the current message
                 - Return that response as a string
         """
-        # TODO: Generate and return response
-        pass
+        try:
+            return chatbot.get_response(message)
+        except Exception as e:
+            return f"I apologize, but I encountered an error. Please try again. Error: {str(e)}"
 
-    
     
     # Create Gradio interface. Customize the interface however you'd like!
     demo = gr.ChatInterface(
@@ -70,7 +71,11 @@ def create_chatbot():
         title="Boston Public School Selection Assistant",
         description="Ask me anything about Boston public schools! Since I am a free tier chatbot, I may give a 503 error when I'm busy. If that happens, please try again a few seconds later.",
         examples=[
-            "I live in Jamaica Plain and want to send my child to kindergarten. What schools are available?"
+            "I live in Jamaica Plain and want to send my child to kindergarten. What schools are available?",
+            "Does any school offer a Spanish immersion program?",
+            "How do I register my child for BPS?",
+            "What documents do I need to apply?"
+            "What phone number or email can I contac to obtain more information?"
         ]
     )
     
