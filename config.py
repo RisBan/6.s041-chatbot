@@ -5,8 +5,9 @@ from dotenv import load_dotenv
 load_dotenv()
 
 
-BASE_MODEL = "TinyLlama/TinyLlama-1.1B-Chat-v1.0"
+BASE_MODEL = "mistralai/Mistral-7B-Instruct-v0.1" # just testing
 # Other options:
+# MODEL = "TinyLlama/TinyLlama-1.1B-Chat-v1.0"" --> original recommended model
 # MODEL = "meta-llama/Llama-2-7b-chat-hf"
 # MODEL = "openlm-research/open_llama_3b"
 
