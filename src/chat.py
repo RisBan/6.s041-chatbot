@@ -37,7 +37,13 @@ class SchoolChatbot:
              User: {user_input}
              Assistant:"
         """
-        pass
+        return (
+            "You are a helpful assistant that specializes in helping parents choose Boston Public Schools"
+            "Answer clearly and accurately using the latest school registration rules, deadlines, and program information."
+            "Always be professional, clear, and focused on helping parents make informed decisions about schools.\n\n"
+             f"User: {user_input}\n"
+            "Assistant:"
+        )
         
     def get_response(self, user_input):
         """
@@ -58,4 +64,22 @@ class SchoolChatbot:
         - Use self.format_prompt() to format the user's input
         - Use self.client to generate responses
         """
-        pass
+        prompt = self.format_prompt(user_input)
+        
+        try:
+            print("Generating response...")
+            # TODO: revisit parameters later for formatting or prompt optimization. 
+            response = self.client.text_generation(
+                prompt,
+                max_new_tokens=512,
+                stop=["User:", "Assistant:"],
+                do_sample=False, # better to have a deterministic decoding 
+                return_full_text=False
+            )
+            return response.strip()
+            
+        except Exception as e:
+            print(f"API error: {e}")
+            return f"I apologize, but I encountered an error: {str(e)}"
+
+
