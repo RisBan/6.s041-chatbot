@@ -27,13 +27,15 @@ def main():
         "zipCode": "02115"
     }
     
-    # Get grade ID for K0 (3-year-old)
+    # Get grade ID for grade 3 (8-year-old)
     grade_options = api.grade_options()
-    grade_id = grade_options.get("K0")
+    grade_id = grade_options.get("3")
+    print(f"Using grade ID: {grade_id} for Grade 3")
     
-    # Get language ID for English
+    # Get language ID for Mandarin
     language_options = api.language_options()
-    language_id = language_options.get("English")
+    language_id = language_options.get("Mandarin")
+    print(f"Using language ID: {language_id} for Mandarin")
     
     # Test API call
     try:

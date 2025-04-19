@@ -33,6 +33,49 @@ class EligibilityAPI:
         {"id": "school-5", "name": "Josiah Quincy School", "referenceId": "1005"}
     ]
     
+    # Grade to UUID mapping
+    GRADE_TO_UUID = {
+        "Grade K0 (3 years old)": "a409dc76-94cc-471c-bc68-c7b68d05147d",
+        "Grade K1 (4 years old)": "9e1e0cbf-c147-48ac-a961-34fc97a0be67",
+        "Grade K2 (5 years old)": "4134373f-5e12-4a03-b36f-c0a545db9eb7",
+        "1": "eaf903c1-b6c5-4c9d-8905-dc6152ac9f5e",
+        "2": "fb580408-4db9-4e54-8191-cdd6bd95a4fe",
+        "3": "f59adf0b-69d4-4b5b-8a40-5e87886eaba7",
+        "4": "bd63e458-16cc-46ed-a260-c936a85fdc55",
+        "5": "12746de8-ab87-4af5-b8ef-abcb83285467",
+        "6": "bb81c16d-2f72-41a9-929c-9316f2143780",
+        "7": "92efe874-5e03-4037-aefd-1edded298e46",
+        "8": "f2529c1b-c1c1-4fb6-bf2d-c2de261d3b5b",
+        "9": "f6b26370-247e-4ef3-8144-0b1eddc86849",
+        "10": "d98e3523-82c7-4940-9177-a4d92807914f",
+        "11": "5d40fd74-63bd-49ce-8439-8b3a55ed0864",
+        "12": "2ce44985-23b2-438a-906e-e56369300467"
+    }
+    
+    # Language to UUID mapping
+    LANGUAGE_TO_UUID = {
+        "English": "01614035-4bc6-404f-adef-f35ef2d39192",
+        "Spanish": "8ec25e1f-4b80-4870-a241-e5a5268bf406",
+        "Arabic": "db23f5cc-c0fa-4fe4-872d-73dc6d2bff84",
+        "Mandarin": "f1ef8da1-7cac-45ab-8eb8-95bef0fb6b58",
+        "Burmese": "b8ab12cd-6c8d-4d30-926b-b47f0db22a45",
+        "Cambodian": "c3900f20-233a-48f2-9883-c15b4777197b",
+        "Cantonese": "9f66a115-e9f3-483a-b571-704a7ef220eb",
+        "Cape Verdean": "41fdcd94-a1cd-4f76-bb5b-fa4232a9d036",
+        "French": "3a266ac4-08c1-4978-8e7f-a9eff51483d8",
+        "Greek": "f1ff0ead-25af-4dce-b805-b3c2bccfc8ea",
+        "Haitian Creole": "0f6ee3c9-792d-4d0c-b6c2-6db3759ddaf9",
+        "H'Mong": "c3e5706a-4600-4867-a531-43b14b648d9a",
+        "Italian": "e65ba112-51d5-4b08-8e1c-924dfb831760",
+        "Korean": "576debcd-872b-40aa-80a8-087832a0af59",
+        "Portuguese": "f0e7b707-1beb-4a27-b0cb-4a74a57f1b0f",
+        "Russian": "d8701bba-106e-4063-8bf5-f0836699c673",
+        "Somali": "47e4c94d-3dc0-4aeb-8929-20567971e3e3",
+        "Toishanese": "814d20d0-bc06-46f0-84af-c0bd4abdfa21",
+        "Vietnamese": "fbf50558-6cdb-46c4-b079-5a8498fba82a",
+        "Other": "64351764-04ed-4828-8320-35579deca69b"
+    }
+    
     def __init__(self):
         """Initialize the API client with default headers."""
         self.headers = {
@@ -139,9 +182,20 @@ class EligibilityAPI:
         """
         return {
             "K0": "a409dc76-94cc-471c-bc68-c7b68d05147d",
-            "K1": "4c198e2d-50cc-4b61-9528-4c7e4a800a91",
-            "K2": "8a08963a-4683-410c-8eef-52c1a81c2c02",
-            # Add other grades as needed
+            "K1": "9e1e0cbf-c147-48ac-a961-34fc97a0be67",
+            "K2": "4134373f-5e12-4a03-b36f-c0a545db9eb7",
+            "1": "eaf903c1-b6c5-4c9d-8905-dc6152ac9f5e",
+            "2": "fb580408-4db9-4e54-8191-cdd6bd95a4fe",
+            "3": "f59adf0b-69d4-4b5b-8a40-5e87886eaba7",
+            "4": "bd63e458-16cc-46ed-a260-c936a85fdc55",
+            "5": "12746de8-ab87-4af5-b8ef-abcb83285467",
+            "6": "bb81c16d-2f72-41a9-929c-9316f2143780", 
+            "7": "92efe874-5e03-4037-aefd-1edded298e46",
+            "8": "f2529c1b-c1c1-4fb6-bf2d-c2de261d3b5b",
+            "9": "f6b26370-247e-4ef3-8144-0b1eddc86849",
+            "10": "d98e3523-82c7-4940-9177-a4d92807914f",
+            "11": "5d40fd74-63bd-49ce-8439-8b3a55ed0864",
+            "12": "2ce44985-23b2-438a-906e-e56369300467"
         }
     
     @staticmethod
@@ -153,7 +207,24 @@ class EligibilityAPI:
             Dict[str, str]: Dictionary mapping language names to their IDs
         """
         return {
-            "English": "01614035-4bc6-404f-adef-c72643b8bd3d",
-            "Spanish": "cfdef96c-58fa-4ce0-a44d-fd328ac520a6",
-            # Add other languages as needed
+            "English": "01614035-4bc6-404f-adef-f35ef2d39192",
+            "Spanish": "8ec25e1f-4b80-4870-a241-e5a5268bf406",
+            "Arabic": "db23f5cc-c0fa-4fe4-872d-73dc6d2bff84",
+            "Mandarin": "f1ef8da1-7cac-45ab-8eb8-95bef0fb6b58",
+            "Burmese": "b8ab12cd-6c8d-4d30-926b-b47f0db22a45",
+            "Cambodian": "c3900f20-233a-48f2-9883-c15b4777197b",
+            "Cantonese": "9f66a115-e9f3-483a-b571-704a7ef220eb",
+            "Cape Verdean": "41fdcd94-a1cd-4f76-bb5b-fa4232a9d036",
+            "French": "3a266ac4-08c1-4978-8e7f-a9eff51483d8",
+            "Greek": "f1ff0ead-25af-4dce-b805-b3c2bccfc8ea",
+            "Haitian Creole": "0f6ee3c9-792d-4d0c-b6c2-6db3759ddaf9",
+            "H'Mong": "c3e5706a-4600-4867-a531-43b14b648d9a",
+            "Italian": "e65ba112-51d5-4b08-8e1c-924dfb831760",
+            "Korean": "576debcd-872b-40aa-80a8-087832a0af59",
+            "Portuguese": "f0e7b707-1beb-4a27-b0cb-4a74a57f1b0f",
+            "Russian": "d8701bba-106e-4063-8bf5-f0836699c673",
+            "Somali": "47e4c94d-3dc0-4aeb-8929-20567971e3e3",
+            "Toishanese": "814d20d0-bc06-46f0-84af-c0bd4abdfa21",
+            "Vietnamese": "fbf50558-6cdb-46c4-b079-5a8498fba82a",
+            "Other": "64351764-04ed-4828-8320-35579deca69b"
         } 
