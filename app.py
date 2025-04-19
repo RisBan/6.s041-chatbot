@@ -78,12 +78,12 @@ def create_chatbot():
             additional_inputs=[conversation_state],
             additional_outputs=[conversation_state],
             examples=[
-                "I live in Jamaica Plain and want to send my child to kindergarten. What schools are available?",
-                "Does any school offer a Spanish immersion program?",
-                "How do I register my child for BPS?",
-                "What documents do I need to apply?",
-                "I'm looking for schools for my child who will be in 3rd grade. We live near 123 Commonwealth Ave, Boston, MA 02115.",
-                "What phone number or email can I contact to obtain more information?"
+                ["I live in Jamaica Plain and want to send my child to kindergarten. What schools are available?"],
+                ["Does any school offer a Spanish immersion program?"],
+                ["How do I register my child for BPS?"],
+                ["What documents do I need to apply?"],
+                ["I'm looking for schools for my child who will be in 3rd grade. We live near 123 Commonwealth Ave, Boston, MA 02115."],
+                ["What phone number or email can I contact to obtain more information?"]
             ],
             title="",
         )

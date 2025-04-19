@@ -86,18 +86,22 @@ Key facts:
         
         # Add information we've collected about the user
         user_info = "\n\nWhat I know about the user:\n"
-        if self.conversation_state["address"]:
-            addr = self.conversation_state["address"]
+        address_state = self.conversation_state.get("address")
+        grade_state = self.conversation_state.get("grade")
+        language_state = self.conversation_state.get("language")
+        
+        if address_state:
+            addr = address_state
             address_str = f"{addr.get('streetAddress', '')}, {addr.get('city', '')}, {addr.get('state', '')} {addr.get('zipCode', '')}"
             user_info += f"- Address: {address_str.strip()}\n"
         
-        if self.conversation_state["grade"]:
+        if grade_state:
             user_info += f"- Child's grade: {self.conversation_state.get('grade_display', 'Unknown')}\n"
             
-        if self.conversation_state["language"]:
+        if language_state:
             user_info += f"- Language preference: {self.conversation_state.get('language_display', 'Unknown')}\n"
             
-        if any([self.conversation_state["address"], self.conversation_state["grade"], self.conversation_state["language"]]):
+        if any([address_state, grade_state, language_state]):
             context += user_info
         
         # Final formatted prompt
@@ -114,7 +118,7 @@ Key facts:
             dict or None: Extracted address information or None if not found
         """
         # If we're explicitly waiting for an address, be more lenient with parsing
-        if self.conversation_state["waiting_for"] == "address":
+        if self.conversation_state.get("waiting_for") == "address":
             # For direct address responses, we can be more lenient
             simple_address_pattern = r'([0-9]+\s+[A-Za-z\s.]+)(?:,\s*|\s+)([A-Za-z\s]+)(?:,\s*|\s+)(?:MA|Massachusetts)(?:,\s*|\s+)(\d{5})'
             simple_match = re.search(simple_address_pattern, user_input, re.IGNORECASE)
@@ -193,7 +197,7 @@ Key facts:
             str or None: Grade ID or None if not found
         """
         # If we're explicitly waiting for a grade, be more lenient
-        if self.conversation_state["waiting_for"] == "grade":
+        if self.conversation_state.get("waiting_for") == "grade":
             # For direct grade responses like "5" or "grade 5" or "fifth grade"
             simple_grade_pattern = r'(?:grade\s*)?(\d{1,2})(?:th|st|nd|rd)?(?:\s*grade)?'
             simple_match = re.search(simple_grade_pattern, user_input, re.IGNORECASE)
@@ -250,7 +254,7 @@ Key facts:
                 return grade_options.get(grade)
                 
         # Default to K2 (kindergarten) if no grade is detected and we're not specifically asking
-        if self.conversation_state["waiting_for"] != "grade":
+        if self.conversation_state.get("waiting_for") != "grade":
             return grade_options.get("K2")
         return None
     
@@ -288,7 +292,7 @@ Key facts:
         }
         
         # If we're explicitly waiting for a language, be more lenient
-        if self.conversation_state["waiting_for"] == "language":
+        if self.conversation_state.get("waiting_for") == "language":
             # Check direct language responses with a simpler approach
             user_input_lower = user_input.lower()
             for language in language_mapping:
@@ -306,7 +310,7 @@ Key facts:
                 return language_options.get(language)
         
         # Default to English if no language is detected and we're not specifically asking
-        if self.conversation_state["waiting_for"] != "language":
+        if self.conversation_state.get("waiting_for") != "language":
             self.conversation_state["language_display"] = "English"
             return language_options.get("English")
         return None
@@ -319,11 +323,11 @@ Key facts:
     def determine_missing_info(self):
         """Determine what information is missing for school eligibility search"""
         missing = []
-        if not self.conversation_state["address"]:
+        if not self.conversation_state.get("address"):
             missing.append("address")
-        if not self.conversation_state["grade"]:
+        if not self.conversation_state.get("grade"):
             missing.append("grade")
-        if not self.conversation_state["language"]:
+        if not self.conversation_state.get("language"):
             missing.append("language")
         return missing
     
@@ -338,7 +342,7 @@ Key facts:
             str or None: Response if handled, None otherwise
         """
         # Check if we're waiting for specific information
-        waiting_for = self.conversation_state["waiting_for"]
+        waiting_for = self.conversation_state.get("waiting_for")
         
         if waiting_for == "address":
             address = self.extract_address_info(user_input)
@@ -404,9 +408,11 @@ Key facts:
                 return "I didn't recognize that language. Please choose from options like English, Spanish, Mandarin, etc."
             
         # Check if it's a follow-up about previously found schools
-        if self.conversation_state["last_school_results"] and re.search(r'tell me more about|more information|details (about|on)|what about|where is', user_input, re.IGNORECASE):
+        # Use .get() for safer access to last_school_results
+        last_results = self.conversation_state.get("last_school_results")
+        if last_results and re.search(r'tell me more about|more information|details (about|on)|what about|where is', user_input, re.IGNORECASE):
             # Try to identify which school they're asking about
-            schools = self.conversation_state["last_school_results"]
+            schools = last_results # Use the retrieved value
             
             # Check for school number references (e.g., "Tell me more about #3")
             number_match = re.search(r'#?(\d+)', user_input)
@@ -430,16 +436,21 @@ Key facts:
     def search_eligible_schools(self):
         """Search for eligible schools using the information we have"""
         try:
-            # First ensure we have all needed information
-            if not all([self.conversation_state["address"], self.conversation_state["grade"], self.conversation_state["language"]]):
+            # First ensure we have all needed information using .get()
+            current_address = self.conversation_state.get("address")
+            current_grade = self.conversation_state.get("grade")
+            current_language = self.conversation_state.get("language")
+            
+            if not all([current_address, current_grade, current_language]):
+                # Determine missing info using the updated method
                 missing = self.determine_missing_info()
                 return f"To find eligible schools, I still need your {', '.join(missing)}."
             
-            # Call the API to find eligible schools
+            # Call the API to find eligible schools using the retrieved values
             results = self.eligibility_api.find_eligible_schools(
-                grade_id=self.conversation_state["grade"],
-                address=self.conversation_state["address"],
-                language_id=self.conversation_state["language"]
+                grade_id=current_grade,
+                address=current_address,
+                language_id=current_language
             )
             
             # Process results
