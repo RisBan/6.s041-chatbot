@@ -6,7 +6,9 @@ in Boston based on student details and address information.
 """
 
 import requests
+import json
 from typing import Dict, Any, Optional, List
+import os
 
 class EligibilityAPI:
     """
@@ -15,23 +17,30 @@ class EligibilityAPI:
     
     BASE_URL = "https://prod.execute-api.apply.avela.org/eligibility/organizations/boston/formTemplates/2f58f4ce-b462-4028-ae59-7ab874fc1224/findEligibility"
     
-    # Static list of all Boston schools - this would ideally come from a separate API call or database
-    ALL_SCHOOLS = [
-        {"id": "4532d8a9-7ef3-4a90-aa4f-3c5149560474", "name": "Madison Park Technical Vocational High School", "referenceId": "1210"},
-        {"id": "71e955b2-36ea-4e34-848e-63a78ed0688e", "name": "Mission Grammar School", "referenceId": "259028"},
-        {"id": "7d0ac7b2-c79a-4614-a614-c858e517e1b8", "name": "Murphy K-8 School", "referenceId": "4400"},
-        {"id": "a35500f2-89da-4e4b-b088-8646cfd2fd5b", "name": "YMCA - Roxbury Tenants of Harvard (RTH)", "referenceId": "187660"},
-        {"id": "4b084cc6-88e7-4417-8c67-dbb4a9cfaea0", "name": "Fenway High School", "referenceId": "1265"},
-        {"id": "6ded6119-1572-4941-8c98-d2a19c48f390", "name": "Little Amigos Early Learning Center", "referenceId": "260040"},
-        {"id": "779dc3b2-8056-4c81-b1bd-d507336435e3", "name": "O'Donnell Elementary School", "referenceId": "4543"},
-        {"id": "6a3a0f1d-3861-434c-a084-b2b1a8334868", "name": "Bridge to Nature", "referenceId": "187594"},
-        # Add more schools as they become known
-        {"id": "school-1", "name": "Boston Arts Academy", "referenceId": "1001"},
-        {"id": "school-2", "name": "Boston Latin School", "referenceId": "1002"},
-        {"id": "school-3", "name": "Boston Latin Academy", "referenceId": "1003"},
-        {"id": "school-4", "name": "John D. O'Bryant School", "referenceId": "1004"},
-        {"id": "school-5", "name": "Josiah Quincy School", "referenceId": "1005"}
-    ]
+    # Load the complete list of schools from the minified JSON file
+    def __init__(self):
+        """Initialize the API client with default headers and load school data."""
+        self.headers = {
+            "Content-Type": "application/json",
+            "User-Agent": "Mozilla/5.0",
+            "Origin": "https://boston.explore.avela.org",
+            "Referer": "https://boston.explore.avela.org/"
+        }
+        
+        # Load the schools data from the minified JSON file
+        try:
+            with open("all_schools_minified.json", "r", encoding="utf-8") as f:
+                schools_data = json.load(f)
+                self.ALL_SCHOOLS = []
+                for school in schools_data:
+                    self.ALL_SCHOOLS.append({
+                        "id": school.get("id", ""),
+                        "name": school.get("name", ""),
+                        "referenceId": school.get("id", ""), # Use the id as referenceId
+                        "address": school.get("address", "")
+                    })
+        except Exception as e:
+            print(f"Error loading schools data: {e}")
     
     # Grade to UUID mapping
     GRADE_TO_UUID = {
@@ -75,15 +84,6 @@ class EligibilityAPI:
         "Vietnamese": "fbf50558-6cdb-46c4-b079-5a8498fba82a",
         "Other": "64351764-04ed-4828-8320-35579deca69b"
     }
-    
-    def __init__(self):
-        """Initialize the API client with default headers."""
-        self.headers = {
-            "Content-Type": "application/json",
-            "User-Agent": "Mozilla/5.0",
-            "Origin": "https://boston.explore.avela.org",
-            "Referer": "https://boston.explore.avela.org/"
-        }
     
     def find_eligible_schools(self, 
                              grade_id: str,
@@ -133,25 +133,18 @@ class EligibilityAPI:
         Returns:
             List[Dict[str, Any]]: List of eligible schools
         """
-        # Extract ineligible school IDs from the API response
+        # Extract ineligible school reference_ids from the API response
         ineligible_school_ids = []
         if "ineligibleSchools" in api_response:
-            ineligible_school_ids = [school["id"] for school in api_response["ineligibleSchools"]]
+            ineligible_school_ids = [school["referenceId"] for school in api_response["ineligibleSchools"]]
         
-        # If API returns complete school list, use that instead of our static list
-        all_schools = api_response.get("allSchools", self.ALL_SCHOOLS)
-        
+        all_schools = json.load(open("all_schools_minified.json"))
+
         # Filter out ineligible schools to get eligible ones
         eligible_schools = [
             school for school in all_schools 
             if school["id"] not in ineligible_school_ids
         ]
-        
-        # If we're working with the static list, we need to add addresses
-        # In a real implementation, this would come from the API
-        for school in eligible_schools:
-            if "address" not in school:
-                school["address"] = f"Boston, MA"
         
         return eligible_schools
     
@@ -171,6 +164,51 @@ class EligibilityAPI:
         """
         # Placeholder for future implementation
         pass
+        
+    def get_full_school_details(self, school_id: str) -> Dict[str, Any]:
+        """
+        Get comprehensive information about a specific school from en.data.json
+        
+        Args:
+            school_id (str): The ID of the school to get details for
+            
+        Returns:
+            Dict[str, Any]: Detailed school information or empty dict if not found
+        """
+        try:
+            # Load the full school data from en.data.json
+            # The file seems to have some formatting issues, so we need to handle it carefully
+            with open("en.data.json", "r", encoding="utf-8") as f:
+                # Read and fix json format
+                data = f.read()
+                data = data.replace("%", "")  # Remove any trailing % characters
+                # Try loading as JSON
+                try:
+                    schools_data = json.loads(data)
+                except json.JSONDecodeError:
+                    # If the file doesn't parse correctly, it may need additional cleaning
+                    print("Error parsing en.data.json - attempting alternative parsing")
+                    # Try to extract schools as a list from the file content
+                    if data.startswith("[{") and data.endswith("}]"):
+                        # Remove any trailing characters after the last closing bracket
+                        clean_data = data[:data.rindex("}]") + 2]
+                        try:
+                            schools_data = json.loads(clean_data)
+                        except:
+                            print("Failed to parse en.data.json even after cleaning")
+                            return {}
+                    else:
+                        print("Cannot identify JSON structure in en.data.json")
+                        return {}
+                
+            # Find the school by ID - strictly compare strings to avoid type issues
+            for school in schools_data:
+                if str(school.get("id", "")) == str(school_id):
+                    return school
+                    
+        except Exception as e:
+            print(f"Error loading full school data: {e}")
+            return {}
     
     @staticmethod
     def grade_options() -> Dict[str, str]:

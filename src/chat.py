@@ -413,6 +413,7 @@ Key facts:
         if last_results and re.search(r'tell me more about|more information|details (about|on)|what about|where is', user_input, re.IGNORECASE):
             # Try to identify which school they're asking about
             schools = last_results # Use the retrieved value
+            target_school = None
             
             # Check for school number references (e.g., "Tell me more about #3")
             number_match = re.search(r'#?(\d+)', user_input)
@@ -420,18 +421,116 @@ Key facts:
                 try:
                     index = int(number_match.group(1)) - 1
                     if 0 <= index < len(schools):
-                        school = schools[index]
-                        return f"Here's more information about {school.get('name', 'the school')}:\n\nAddress: {school.get('address', 'Information not available')}\nReferenceID: {school.get('referenceId', 'N/A')}\n\nFor complete details and registration information, please visit https://boston.explore.avela.org/ or contact a BPS Welcome Center at 617-635-9010."
+                        target_school = schools[index]
                 except:
                     pass
                     
-            # Check for school name mentions
-            for idx, school in enumerate(schools):
-                school_name = school.get('name', '').lower()
-                if school_name and school_name in user_input.lower():
-                    return f"Here's more information about {school.get('name', 'the school')}:\n\nAddress: {school.get('address', 'Information not available')}\nReferenceID: {school.get('referenceId', 'N/A')}\n\nFor complete details and registration information, please visit https://boston.explore.avela.org/ or contact a BPS Welcome Center at 617-635-9010."
+            # If we didn't find a school by number, try to find it by name
+            if not target_school:
+                for school in schools:
+                    school_name = school.get('name', '').lower()
+                    if school_name and school_name in user_input.lower():
+                        target_school = school
+                        break
+                        
+            # If we found a school, get its details from en.data.json
+            if target_school:
+                school_id = target_school.get('id', '')
+                if school_id:
+                    # Try to get full details from en.data.json
+                    full_details = self.eligibility_api.get_full_school_details(school_id)
+                    
+                    # If we got full details, format and return them
+                    if full_details and isinstance(full_details, dict) and full_details.get('name'):
+                        return self.format_school_details_response(full_details)
+                
+                # Fallback to basic info if we couldn't get full details
+                return f"Here's more information about {target_school.get('name', 'the school')}:\n\nAddress: {target_school.get('address', 'Information not available')}\nReferenceID: {target_school.get('referenceId', 'N/A')}\n\nFor complete details and registration information, please visit https://boston.explore.avela.org/ or contact a BPS Welcome Center at 617-635-9010."
         
         return None
+    
+    def format_school_details_response(self, school_details):
+        """Format a comprehensive school details response using full data from en.data.json"""
+        name = school_details.get('name') or school_details.get('school', 'Unknown School')
+        address = school_details.get('address', 'Information not available')
+        
+        # Start with basic information
+        response = f"Here's detailed information about {name}:\n\n"
+        response += f"Address: {address}\n"
+        
+        # Add grade span if available
+        if grade_span := school_details.get('grade_span'):
+            response += f"Grade Span: {grade_span}\n"
+            
+        # Add phone if available
+        if phone := (school_details.get('phone_number') or school_details.get('phone')):
+            response += f"Phone: {phone}\n"
+            
+        # Add website if available
+        if website := school_details.get('website'):
+            response += f"Website: {website}\n"
+            
+        # Add school hours if available
+        if hours := (school_details.get('hours_of_operation') or school_details.get('hours')):
+            response += f"Hours: {hours}\n"
+            
+        # Add programs/features if available (checking multiple possible fields)
+        programs = []
+        if special_programs := school_details.get('specialized_education_programs'):
+            if special_programs and special_programs.strip():
+                programs.append(f"Specialized Education Programs: {special_programs}")
+                
+        if language_text := school_details.get('language_programming_text'):
+            if language_text and language_text.strip():
+                programs.append(f"Language Programs: {language_text}")
+                
+        if unique_features := school_details.get('unique_features'):
+            if isinstance(unique_features, list) and unique_features:
+                programs.append("Unique Features: " + ", ".join([f.strip() for f in unique_features if f.strip()]))
+            elif isinstance(unique_features, str) and unique_features.strip():
+                programs.append(f"Unique Features: {unique_features}")
+                
+        # Add programs if we found any
+        if programs:
+            response += "\nPrograms & Features:\n"
+            for program in programs:
+                response += f"- {program}\n"
+                
+        # Add additional amenities section if available
+        amenities = []
+        if school_details.get('library') == 'Yes':
+            amenities.append('Library')
+        if school_details.get('music_room') == 'Yes':
+            amenities.append('Music Room')
+        if school_details.get('gymnasium') == 'Yes':
+            amenities.append('Gymnasium')
+        if school_details.get('outdoor_classrooms') == 'Yes':
+            amenities.append('Outdoor Classroom')
+        if school_details.get('science_lab') == 'Yes':
+            amenities.append('Science Lab')
+        if school_details.get('cafeteria') == 'Yes':
+            amenities.append('Cafeteria')
+            
+        if amenities:
+            response += f"\nAmenities: {', '.join(amenities)}\n"
+                
+        # Add mission statement if available
+        if mission := school_details.get('overview_mission_statement'):
+            if mission and len(mission) > 30:  # Only include if substantial
+                response += f"\nMission Statement: {mission[:200]}{'...' if len(mission) > 200 else ''}\n"
+            
+        # Add before/after school info
+        if before := school_details.get('before_school_program'):
+            if before and before.strip():
+                response += f"\nBefore School Program: {before}\n"
+                
+        if after := school_details.get('after_school_program'):
+            if after and after.strip():
+                response += f"\nAfter School Program: {after}\n"
+        
+        response += "\nFor complete details and registration information, please visit https://boston.explore.avela.org/ or contact a BPS Welcome Center at 617-635-9010."
+        
+        return response
     
     def search_eligible_schools(self):
         """Search for eligible schools using the information we have"""
