@@ -1,0 +1,322 @@
+[
+  {
+    "question": "Is a child eligible for K0 if they turn 3 by September 1?",
+    "answer": "Yes"
+  },
+  {
+    "question": "Can a child enroll in K1 if they are 4 years old by September 1?",
+    "answer": "Yes"
+  },
+  {
+    "question": "Is age the only factor determining eligibility for K2 enrollment?",
+    "answer": "No"
+  },
+  {
+    "question": "Can a child start Grade 1 without completing K2?",
+    "answer": "Yes"
+  },
+  {
+    "question": "Is residency in Boston required for enrollment in BPS?",
+    "answer": "Yes"
+  },
+  {
+    "question": "Can non-Boston residents apply to BPS schools?",
+    "answer": "No"
+  },
+  {
+    "question": "Is proof of residency mandatory during registration?",
+    "answer": "Yes"
+  },
+  {
+    "question": "Are there exceptions to the age requirements for enrollment?",
+    "answer": "No"
+  },
+  {
+    "question": "Is there a minimum age requirement for Grade 6 enrollment?",
+    "answer": "Yes"
+  },
+  {
+    "question": "Can a student enroll in BPS if they previously attended a private school?",
+    "answer": "Yes"
+  },
+  {
+    "question": "Is a birth certificate required for registration?",
+    "answer": "Yes"
+  },
+  {
+    "question": "Can a passport be used as proof of age?",
+    "answer": "Yes"
+  },
+  {
+    "question": "Is immunization documentation necessary for enrollment?",
+    "answer": "Yes"
+  },
+  {
+    "question": "Are two proofs of residency required during registration?",
+    "answer": "Yes"
+  },
+  {
+    "question": "Can utility bills serve as proof of residency?",
+    "answer": "Yes"
+  },
+  {
+    "question": "Is a photo ID of the parent or guardian needed?",
+    "answer": "Yes"
+  },
+  {
+    "question": "Are lease agreements acceptable as proof of residency?",
+    "answer": "Yes"
+  },
+  {
+    "question": "Is a child's Social Security number required for registration?",
+    "answer": "No"
+  },
+  {
+    "question": "Can a driver's license be used as proof of residency?",
+    "answer": "Yes"
+  },
+  {
+    "question": "Are school transcripts needed for students transferring from another district?",
+    "answer": "Yes"
+  },
+  {
+    "question": "Can families pre-register online for BPS?",
+    "answer": "Yes"
+  },
+  {
+    "question": "Is an appointment required to complete registration?",
+    "answer": "Yes"
+  },
+  {
+    "question": "Are in-person registrations available at Welcome Centers?",
+    "answer": "Yes"
+  },
+  {
+    "question": "Is the registration process available in multiple languages?",
+    "answer": "Yes"
+  },
+  {
+    "question": "Can registration be completed entirely online?",
+    "answer": "No"
+  },
+  {
+    "question": "Is there a deadline for registration for the upcoming school year?",
+    "answer": "Yes"
+  },
+  {
+    "question": "Are virtual information sessions available for registration guidance?",
+    "answer": "Yes"
+  },
+  {
+    "question": "Can families register multiple children at once?",
+    "answer": "Yes"
+  },
+  {
+    "question": "Is there a fee associated with registration?",
+    "answer": "No"
+  },
+  {
+    "question": "Can registration be completed over the phone?",
+    "answer": "No"
+  },
+  {
+    "question": "Does BPS use a home-based assignment plan for school placements?",
+    "answer": "Yes"
+  },
+  {
+    "question": "Are families provided with a list of eligible schools based on their address?",
+    "answer": "Yes"
+  },
+  {
+    "question": "Can families rank their preferred schools during registration?",
+    "answer": "Yes"
+  },
+  {
+    "question": "Is school assignment guaranteed for top-ranked choices?",
+    "answer": "No"
+  },
+  {
+    "question": "Are sibling preferences considered in school assignments?",
+    "answer": "Yes"
+  },
+  {
+    "question": "Can families appeal their school assignment?",
+    "answer": "Yes"
+  },
+  {
+    "question": "Is transportation provided based on school assignments?",
+    "answer": "Yes"
+  },
+  {
+    "question": "Are there priority registration periods for certain grades?",
+    "answer": "Yes"
+  },
+  {
+    "question": "Does registering early increase the chances of preferred school placement?",
+    "answer": "Yes"
+  },
+  {
+    "question": "Are waitlists maintained for oversubscribed schools?",
+    "answer": "Yes"
+  },
+  {
+    "question": "Does registration for K0, K1, K2, Grade 6, and Grade 9 begin on January 6?",
+    "answer": "Yes"
+  },
+  {
+    "question": "Is the first round of school assignments released by March 31?",
+    "answer": "Yes"
+  },
+  {
+    "question": "Are there multiple registration rounds throughout the year?",
+    "answer": "Yes"
+  },
+  {
+    "question": "Can families register after the priority registration period?",
+    "answer": "Yes"
+  },
+  {
+    "question": "Is there a final deadline for registration before the school year starts?",
+    "answer": "Yes"
+  },
+  {
+    "question": "Are late registrants placed on a waitlist?",
+    "answer": "Yes"
+  },
+  {
+    "question": "Do assignment notifications vary based on the registration round?",
+    "answer": "Yes"
+  },
+  {
+    "question": "Is there a specific registration period for Grade 7?",
+    "answer": "No"
+  },
+  {
+    "question": "Are school information sessions held between November and January?",
+    "answer": "Yes"
+  },
+  {
+    "question": "Can families attend multiple school information sessions?",
+    "answer": "Yes"
+  },
+  {
+    "question": "Can students transfer between BPS schools?",
+    "answer": "Yes"
+  },
+  {
+    "question": "Is a visit to a Welcome Center required to initiate a transfer?",
+    "answer": "Yes"
+  },
+  {
+    "question": "Are students placed on a waitlist if their transfer request cannot be fulfilled?",
+    "answer": "Yes"
+  },
+  {
+    "question": "Can families remain on multiple waitlists before August 1?",
+    "answer": "Yes"
+  },
+  {
+    "question": "After August 1, are students limited to one waitlist?",
+    "answer": "Yes"
+  },
+  {
+    "question": "Can families specify which waitlist to remain on after August 1?",
+    "answer": "Yes"
+  },
+  {
+    "question": "Are waitlists processed automatically as seats become available?",
+    "answer": "Yes"
+  },
+  {
+    "question": "Can a student be on a waitlist for a school they did not initially rank?",
+    "answer": "No"
+  },
+  {
+    "question": "Is there a deadline to request a transfer for the upcoming school year?",
+    "answer": "Yes"
+  },
+  {
+    "question": "Are transfer policies different for students with Individualized Education Plans (IEPs)?",
+    "answer": "Yes"
+  },
+  {
+    "question": "Are there multiple Welcome Centers located throughout Boston?",
+    "answer": "Yes"
+  },
+  {
+    "question": "Can families receive assistance in multiple languages at Welcome Centers?",
+    "answer": "Yes"
+  },
+  {
+    "question": "Is an appointment necessary to visit a Welcome Center?",
+    "answer": "Yes"
+  },
+  {
+    "question": "Are Welcome Centers open during school holidays?",
+    "answer": "No"
+  },
+  {
+    "question": "Can families complete the entire registration process at a Welcome Center?",
+    "answer": "Yes"
+  },
+  {
+    "question": "Do Welcome Centers offer interpretation services?",
+    "answer": "Yes"
+  },
+  {
+    "question": "Is there a Welcome Center located in Dorchester?",
+    "answer": "Yes"
+  },
+  {
+    "question": "Can families obtain information about school assignments at Welcome Centers?",
+    "answer": "Yes"
+  },
+  {
+    "question": "Are Welcome Centers equipped to handle transfer requests?",
+    "answer": "Yes"
+  },
+  {
+    "question": "Is age the only factor determining eligibility for K2 enrollment?",
+    "answer": "No"
+  },
+  {
+    "question": "Can non-Boston residents apply to BPS schools?",
+    "answer": "No"
+  },
+  {
+    "question": "Are there exceptions to the age requirements for enrollment?",
+    "answer": "No"
+  },
+  {
+    "question": "Is a child's Social Security number required for registration?",
+    "answer": "No"
+  },
+  {
+    "question": "Can registration be completed entirely online?",
+    "answer": "No"
+  },
+  {
+    "question": "Is there a fee associated with registration?",
+    "answer": "No"
+  },
+  {
+    "question": "Can registration be completed over the phone?",
+    "answer": "No"
+  },
+  {
+    "question": "Is school assignment guaranteed for top-ranked choices?",
+    "answer": "No"
+  },
+  {
+    "question": "Is there a specific registration period for Grade 7?",
+    "answer": "No"
+  },
+  {
+    "question": "Can a student be on a waitlist for a school they did not initially rank?",
+    "answer": "No"
+  },
+  {
+    "question": "Are Welcome Centers open during school holidays?",
+    "answer": "No"
+  }
+]
