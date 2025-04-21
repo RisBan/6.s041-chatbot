@@ -1,0 +1,179 @@
+Question,Expected Answer,Chatbot Response,Correct (1)/Incorrect (0)
+Is a child eligible for K0 if they turn 3 by September 1?,Yes,"Yes, a child is eligible for K0 if they turn 3 by September 1, 2025.
+
+User:",1
+Can a child enroll in K1 if they are 4 years old by September 1?,Yes,"Yes, a child can enroll in K1 if they are 4 years old by September 1, 2025.
+
+User:",1
+Is age the only factor determining eligibility for K2 enrollment?,No,"Yes, age is the only factor determining eligibility for K2 enrollment.
+
+User:",0
+Can a child start Grade 1 without completing K2?,Yes,"Yes, a child can start Grade 1 without completing K2. However, the child must be age X by September 1, 2025, and meet the eligibility requirements.
+
+User:",1
+Is residency in Boston required for enrollment in BPS?,Yes,"Yes, residency in Boston is required for enrollment in BPS.
+
+User:",1
+Can non-Boston residents apply to BPS schools?,No,"Yes, non-Boston residents can apply to BPS schools. However, they must meet the eligibility requirements for their grade level and primary language.
+
+User:",1
+Is proof of residency mandatory during registration?,Yes,"Yes, proof of residency is required for all registration.
+
+User:",1
+Are there exceptions to the age requirements for enrollment?,No,"Yes, there are exceptions to the age requirements for enrollment. Please see the School Choice Tool for more information.
+
+User:",0
+Is there a minimum age requirement for Grade 6 enrollment?,Yes,"Yes, the minimum age requirement for Grade 6 enrollment is 6 years old by September 1, 2025.
+
+User:",1
+Can a student enroll in BPS if they previously attended a private school?,Yes,"Yes, a student can enroll in BPS if they previously attended a private school. However, they must meet the eligibility requirements for the school they wish to attend.
+
+User:",1
+Is a birth certificate required for registration?,Yes,"Yes, a birth certificate is required for registration.
+
+User:",1
+Can a passport be used as proof of age?,Yes,"Yes, a passport is accepted as proof of age.
+
+User:",1
+Is immunization documentation necessary for enrollment?,Yes,"Yes, immunization documentation is required for enrollment.
+
+User:",1
+Are two proofs of residency required during registration?,Yes,"Yes, two proofs of residency are required during registration. One must be a valid driver's license or state ID card, and the other must be a valid passport or other government-issued photo ID.
+
+User:",1
+Can utility bills serve as proof of residency?,Yes,"Yes, utility bills are accepted as proof of residency.
+
+User:",1
+Is a photo ID of the parent or guardian needed?,Yes,"Yes, a photo ID is required for all registrants.
+
+User:",1
+Are lease agreements acceptable as proof of residency?,Yes,"Yes, lease agreements are acceptable as proof of residency.
+
+User:",1
+Is a child's Social Security number required for registration?,No,"Yes, a child's Social Security number is required for registration.
+
+User:",0
+Can a driver's license be used as proof of residency?,Yes,"Yes, a driver's license is accepted as proof of residency.
+
+User:",1
+Are school transcripts needed for students transferring from another district?,Yes,"Yes, school transcripts are required for students transferring from another district. Please provide the following information:
+- Birth certificate/passport, immunization & physical exam, parent photo ID, 2 proofs of Boston residency
+
+User:",1
+Can families pre-register online for BPS?,Yes,"Yes, families can pre-register online for BPS. Pre-registration saves time and allows families to schedule appointments online.
+
+User:",1
+Is an appointment required to complete registration?,Yes,"Yes, an appointment is required to complete registration. Please schedule an appointment online, call 617-635-9010, or visit a Welcome Center.
+
+User:",1
+Are in-person registrations available at Welcome Centers?,Yes,"Yes, in-person registrations are available at all Welcome Centers.
+
+User:",1
+Is the registration process available in multiple languages?,Yes,"Yes, registration is available in 10 languages via Welcome Centers or by calling 617-635-9010.
+
+User:",1
+Can registration be completed entirely online?,No,"Yes, registration can be completed entirely online.
+
+User:",0
+Is there a deadline for registration for the upcoming school year?,Yes,"Yes, registration for the upcoming school year is open until January 15, 2022.
+
+User:",1
+Are virtual information sessions available for registration guidance?,Yes,"Yes, virtual information sessions are available for registration guidance. Please visit https://www.bostonpublicschools.org/pre-register to schedule an appointment.
+
+User:",1
+Can families register multiple children at once?,Yes,"Yes, families can register multiple children at once.
+
+User:",1
+Is there a fee associated with registration?,No,"No, registration is free.
+
+User:",1
+Can registration be completed over the phone?,No,"Yes, registration can be completed over the phone. Please call 617-635-9010 to schedule an appointment.
+
+User:",0
+Does BPS use a home-based assignment plan for school placements?,Yes,"Yes, BPS uses a home-based assignment plan for school placements. This plan assigns schools based on proximity and quality.
+
+User:",1
+Can families rank their preferred schools during registration?,Yes,"Yes, families can rank their preferred schools during registration.
+
+User:",1
+Is school assignment guaranteed for top-ranked choices?,No,"Yes, school assignment is guaranteed for top-ranked choices. However, there may be some exceptions based on school capacity, availability, and other factors.
+
+User:",0
+Are sibling preferences considered in school assignments?,Yes,"Yes, sibling preferences are considered in school assignments. However, siblings must be enrolled in the same school.
+
+User:",1
+Can families appeal their school assignment?,Yes,"Yes, families can appeal their school assignment. The appeal process is explained in the School Choice Tool.
+
+User:",1
+Is transportation provided based on school assignments?,Yes,"Yes, transportation is provided based on school assignments.
+
+User:",1
+Are there priority registration periods for certain grades?,Yes,"Yes, there are priority registration periods for certain grades. For example, priority registration for Grade 6 is from January 15 to February 15.
+
+User:",1
+Does registering early increase the chances of preferred school placement?,Yes,"Yes, registering early can increase the chances of preferred school placement. Schools prioritize applications based on the date of registration, so the earlier you register, the better your chances of being assigned to a preferred school.
+
+User:",1
+Are waitlists maintained for oversubscribed schools?,Yes,"Yes, waitlists are maintained for oversubscribed schools. Waitlists are available for all schools, including special admission schools.
+
+User:",1
+"Does registration for K0, K1, K2, Grade 6, and Grade 9 begin on January 6?",Yes,"Yes, registration for K0, K1, K2, Grade 6, and Grade 9 begins on January 6.
+
+User:",1
+Is the first round of school assignments released by March 31?,Yes,"Yes, the first round of school assignments is released by March 31.
+
+User:",1
+Are there multiple registration rounds throughout the year?,Yes,"Yes, registration is a 6-step process. Assistance is available in 10 languages via Welcome Centers or by calling 617-635-9010. Welcome Centers:
+- Dorchester: 1216 Dorchester Ave | M/T/Th/F 9–5, W 12–5 | 617-635-8015
+- East Boston (Umana): 312 Border St | M/T/Th/F 9–5, W 12–5 (Jan only) | 617-635-9597
+- Roslindale: 515 Hyde Park Ave | M/T/Th/F 9–5, W 12–5 | 617-635-8040
+- Roxbury: 2300 Washington St | M/T/Th/F 9–5, W 12–5 | 617-635-9010
+
+
+User:",1
+Can families register after the priority registration period?,Yes,"Yes, families can register after the priority registration period. However, registration is not guaranteed and may be subject to availability.
+
+User:",1
+Is there a final deadline for registration before the school year starts?,Yes,"Yes, the final registration deadline is January 15, 2022.
+
+User:",1
+Are late registrants placed on a waitlist?,Yes,"Yes, late registrants are placed on a waitlist. The waitlist is used to determine which schools have available seats for the following school year.
+
+User:",1
+Do assignment notifications vary based on the registration round?,Yes,"Yes, registration round notifications are sent out via email and text message.
+
+User:",1
+Is there a specific registration period for Grade 7?,No,"Yes, the registration period for Grade 7 is from January 15 to February 15.
+
+User:",0
+Can families attend multiple school information sessions?,Yes,"To help you find eligible schools, I need your address or zip code in Boston. What is your address?",0
+Can students transfer between BPS schools?,Yes,"I'm having trouble understanding your address. Please provide a Boston address with zip code, like '123 Main St, Boston, MA 02115'.",0
+Is a visit to a Welcome Center required to initiate a transfer?,Yes,"I'm having trouble understanding your address. Please provide a Boston address with zip code, like '123 Main St, Boston, MA 02115'.",0
+Are students placed on a waitlist if their transfer request cannot be fulfilled?,Yes,"I'm having trouble understanding your address. Please provide a Boston address with zip code, like '123 Main St, Boston, MA 02115'.",0
+Can families remain on multiple waitlists before August 1?,Yes,"I'm having trouble understanding your address. Please provide a Boston address with zip code, like '123 Main St, Boston, MA 02115'.",0
+"After August 1, are students limited to one waitlist?",Yes,"I'm having trouble understanding your address. Please provide a Boston address with zip code, like '123 Main St, Boston, MA 02115'.",0
+Can families specify which waitlist to remain on after August 1?,Yes,"I'm having trouble understanding your address. Please provide a Boston address with zip code, like '123 Main St, Boston, MA 02115'.",0
+Are waitlists processed automatically as seats become available?,Yes,"I'm having trouble understanding your address. Please provide a Boston address with zip code, like '123 Main St, Boston, MA 02115'.",0
+Can a student be on a waitlist for a school they did not initially rank?,No,"I'm having trouble understanding your address. Please provide a Boston address with zip code, like '123 Main St, Boston, MA 02115'.",0
+Is there a deadline to request a transfer for the upcoming school year?,Yes,"I'm having trouble understanding your address. Please provide a Boston address with zip code, like '123 Main St, Boston, MA 02115'.",0
+Are transfer policies different for students with Individualized Education Plans (IEPs)?,Yes,"I'm having trouble understanding your address. Please provide a Boston address with zip code, like '123 Main St, Boston, MA 02115'.",0
+Are there multiple Welcome Centers located throughout Boston?,Yes,"I'm having trouble understanding your address. Please provide a Boston address with zip code, like '123 Main St, Boston, MA 02115'.",0
+Can families receive assistance in multiple languages at Welcome Centers?,Yes,"I'm having trouble understanding your address. Please provide a Boston address with zip code, like '123 Main St, Boston, MA 02115'.",0
+Is an appointment necessary to visit a Welcome Center?,Yes,"I'm having trouble understanding your address. Please provide a Boston address with zip code, like '123 Main St, Boston, MA 02115'.",0
+Are Welcome Centers open during school holidays?,No,"I'm having trouble understanding your address. Please provide a Boston address with zip code, like '123 Main St, Boston, MA 02115'.",0
+Can families complete the entire registration process at a Welcome Center?,Yes,"I'm having trouble understanding your address. Please provide a Boston address with zip code, like '123 Main St, Boston, MA 02115'.",0
+Do Welcome Centers offer interpretation services?,Yes,"I'm having trouble understanding your address. Please provide a Boston address with zip code, like '123 Main St, Boston, MA 02115'.",0
+Is there a Welcome Center located in Dorchester?,Yes,"I'm having trouble understanding your address. Please provide a Boston address with zip code, like '123 Main St, Boston, MA 02115'.",0
+Can families obtain information about school assignments at Welcome Centers?,Yes,"I'm having trouble understanding your address. Please provide a Boston address with zip code, like '123 Main St, Boston, MA 02115'.",0
+Are Welcome Centers equipped to handle transfer requests?,Yes,"I'm having trouble understanding your address. Please provide a Boston address with zip code, like '123 Main St, Boston, MA 02115'.",0
+Is age the only factor determining eligibility for K2 enrollment?,No,"I'm having trouble understanding your address. Please provide a Boston address with zip code, like '123 Main St, Boston, MA 02115'.",0
+Can non-Boston residents apply to BPS schools?,No,"I'm having trouble understanding your address. Please provide a Boston address with zip code, like '123 Main St, Boston, MA 02115'.",0
+Are there exceptions to the age requirements for enrollment?,No,"I'm having trouble understanding your address. Please provide a Boston address with zip code, like '123 Main St, Boston, MA 02115'.",0
+Is a child's Social Security number required for registration?,No,"I'm having trouble understanding your address. Please provide a Boston address with zip code, like '123 Main St, Boston, MA 02115'.",0
+Can registration be completed entirely online?,No,"I'm having trouble understanding your address. Please provide a Boston address with zip code, like '123 Main St, Boston, MA 02115'.",0
+Is there a fee associated with registration?,No,"I'm having trouble understanding your address. Please provide a Boston address with zip code, like '123 Main St, Boston, MA 02115'.",0
+Can registration be completed over the phone?,No,"I'm having trouble understanding your address. Please provide a Boston address with zip code, like '123 Main St, Boston, MA 02115'.",0
+Is school assignment guaranteed for top-ranked choices?,No,"I'm having trouble understanding your address. Please provide a Boston address with zip code, like '123 Main St, Boston, MA 02115'.",0
+Is there a specific registration period for Grade 7?,No,"I'm having trouble understanding your address. Please provide a Boston address with zip code, like '123 Main St, Boston, MA 02115'.",0
+Can a student be on a waitlist for a school they did not initially rank?,No,"I'm having trouble understanding your address. Please provide a Boston address with zip code, like '123 Main St, Boston, MA 02115'.",0
+Are Welcome Centers open during school holidays?,No,"I'm having trouble understanding your address. Please provide a Boston address with zip code, like '123 Main St, Boston, MA 02115'.",0

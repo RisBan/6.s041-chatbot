@@ -1,0 +1,164 @@
+Question,Expected Answer,Chatbot Response,Correct (1)/Incorrect (0)
+"Which address-related document is acceptable for proof of residency?
+Options:
+A: Movie ticket
+B: Utility bill
+C: School newsletter
+D: Library bookmark
+Please start your answer with the correct letter (e.g., 'A', 'B').",B,"C
+User:",0
+"What type of school assignment method does BPS use?
+Options:
+A: Lottery only
+B: Academic performance based
+C: Home-based assignment
+D: Random draw
+Please start your answer with the correct letter (e.g., 'A', 'B').",C,"B: Academic performance based
+User:",0
+"Which of the following is a priority registration grade?
+Options:
+A: Grade 2
+B: Grade 4
+C: Grade 6
+D: Grade 5
+Please start your answer with the correct letter (e.g., 'A', 'B').",C,"Grade 2
+User:",0
+"Which department handles BPS student registration?
+Options:
+A: City Council
+B: Office of Welcome Services
+C: State Registrar
+D: Public Health Department
+Please start your answer with the correct letter (e.g., 'A', 'B').",B,"City Council
+
+User:",0
+"How many rounds of school registration does BPS typically offer?
+Options:
+A: 1
+B: 2
+C: 3
+D: 4
+Please start your answer with the correct letter (e.g., 'A', 'B').",B,"1
+User:",0
+"When is the second round of registration typically held?
+Options:
+A: Before first round
+B: March
+C: After first round ends
+D: November
+Please start your answer with the correct letter (e.g., 'A', 'B').",C,"The second round of registration typically ends in March.
+User:",0
+"What document can be used as proof of Boston residency?
+Options:
+A: Library card
+B: Lease agreement
+C: Student ID
+D: Grocery receipt
+Please start your answer with the correct letter (e.g., 'A', 'B').",B,"Please provide me with the required documents for registration.
+User:",0
+"Which document is used to verify the parent or guardian's identity?
+Options:
+A: Credit card
+B: Social Security number
+C: Photo ID
+D: Work badge
+Please start your answer with the correct letter (e.g., 'A', 'B').",C,"Option B.
+User:",0
+"Which document is NOT accepted as proof of residency for BPS?
+Options:
+A: Cable bill
+B: Bank statement
+C: Gym membership card
+D: Utility bill
+Please start your answer with the correct letter (e.g., 'A', 'B').",C,"C: Gym membership card
+User:",1
+"What type of document is required for proof of the child's immunization?
+Options:
+A: Vaccination card
+B: Library card
+C: Social Security card
+D: Report card
+Please start your answer with the correct letter (e.g., 'A', 'B').",A,"Please select option B.
+User:",0
+"What is one benefit of registering during priority registration?
+Options:
+A: Guaranteed placement
+B: Higher placement chances
+C: Lower school fees
+D: Free school supplies
+Please start your answer with the correct letter (e.g., 'A', 'B').",B,"Guaranteed placement is the most significant benefit of registering during priority registration. By registering during this time, you are guaranteed a spot in the school of your choice. This means that you will not have to wait in line for a spot, and you will have a higher chance of being placed in the school of your choice. Additionally, you will receive priority registration fees, which can save you money on school fees.
+
+User:",0
+"Which of the following does BPS consider in sibling preference?
+Options:
+A: Cousins
+B: Older siblings at the same school
+C: Friends
+D: Neighbors
+Please start your answer with the correct letter (e.g., 'A', 'B').",B,"C
+User:",0
+"Which grade level is NOT included in BPS's priority registration?
+Options:
+A: K1
+B: Grade 6
+C: Grade 7
+D: K0
+Please start your answer with the correct letter (e.g., 'A', 'B').",C,"K0
+User:",0
+"What is the typical deadline for the first round of BPS registration?
+Options:
+A: February
+B: May
+C: October
+D: December
+Please start your answer with the correct letter (e.g., 'A', 'B').",A,"The first round of BPS registration typically closes in February.
+
+User:",0
+"What is a required immunization for BPS enrollment?
+Options:
+A: MMR (Measles, Mumps, Rubella)
+B: Flu shot
+C: COVID booster
+D: Malaria vaccine
+Please start your answer with the correct letter (e.g., 'A', 'B').",A,"The MMR (Measles, Mumps, Rubella) vaccine is required for all students entering BPS.
+User:",0
+"What is one of the languages BPS registration support is available in?
+Options:
+A: German
+B: Mandarin
+C: Spanish
+D: Italian
+Please start your answer with the correct letter (e.g., 'A', 'B').",C,"Spanish
+User:",0
+"What is the minimum age for K1 registration in BPS?
+Options:
+A: 3 years
+B: 4 years
+C: 5 years
+D: 6 years
+Please start your answer with the correct letter (e.g., 'A', 'B').",B,"The minimum age for K1 registration in BPS is 3 years.
+User:",0
+"How many proofs of residency are required for registration?
+Options:
+A: 1
+B: 2
+C: 3
+D: 4
+Please start your answer with the correct letter (e.g., 'A', 'B').",B,"B
+User:",1
+"Which of the following is a valid proof of age?
+Options:
+A: Library card
+B: Birth certificate
+C: School ID
+D: Bus pass
+Please start your answer with the correct letter (e.g., 'A', 'B').",B,"A
+User:",0
+"What is required to update a student's address?
+Options:
+A: Driver’s license only
+B: Phone bill only
+C: Two new proofs of residency
+D: Email notification
+Please start your answer with the correct letter (e.g., 'A', 'B').",C,"Please select the correct letter.
+User:",0

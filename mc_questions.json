@@ -1,0 +1,202 @@
+[
+  {
+    "question": "Which address-related document is acceptable for proof of residency?",
+    "options": {
+      "A": "Movie ticket",
+      "B": "Utility bill",
+      "C": "School newsletter",
+      "D": "Library bookmark"
+    },
+    "answer": "B"
+  },
+  {
+    "question": "What type of school assignment method does BPS use?",
+    "options": {
+      "A": "Lottery only",
+      "B": "Academic performance based",
+      "C": "Home-based assignment",
+      "D": "Random draw"
+    },
+    "answer": "C"
+  },
+  {
+    "question": "Which of the following is a priority registration grade?",
+    "options": {
+      "A": "Grade 2",
+      "B": "Grade 4",
+      "C": "Grade 6",
+      "D": "Grade 5"
+    },
+    "answer": "C"
+  },
+  {
+    "question": "Which department handles BPS student registration?",
+    "options": {
+      "A": "City Council",
+      "B": "Office of Welcome Services",
+      "C": "State Registrar",
+      "D": "Public Health Department"
+    },
+    "answer": "B"
+  },
+  {
+    "question": "How many rounds of school registration does BPS typically offer?",
+    "options": {
+      "A": "1",
+      "B": "2",
+      "C": "3",
+      "D": "4"
+    },
+    "answer": "B"
+  },
+  {
+    "question": "When is the second round of registration typically held?",
+    "options": {
+      "A": "Before first round",
+      "B": "March",
+      "C": "After first round ends",
+      "D": "November"
+    },
+    "answer": "C"
+  },
+  {
+    "question": "What document can be used as proof of Boston residency?",
+    "options": {
+      "A": "Library card",
+      "B": "Lease agreement",
+      "C": "Student ID",
+      "D": "Grocery receipt"
+    },
+    "answer": "B"
+  },
+  {
+    "question": "Which document is used to verify the parent or guardian's identity?",
+    "options": {
+      "A": "Credit card",
+      "B": "Social Security number",
+      "C": "Photo ID",
+      "D": "Work badge"
+    },
+    "answer": "C"
+  },
+  {
+    "question": "Which document is NOT accepted as proof of residency for BPS?",
+    "options": {
+      "A": "Cable bill",
+      "B": "Bank statement",
+      "C": "Gym membership card",
+      "D": "Utility bill"
+    },
+    "answer": "C"
+  },
+  {
+    "question": "What type of document is required for proof of the child's immunization?",
+    "options": {
+      "A": "Vaccination card",
+      "B": "Library card",
+      "C": "Social Security card",
+      "D": "Report card"
+    },
+    "answer": "A"
+  },
+  {
+    "question": "What is one benefit of registering during priority registration?",
+    "options": {
+      "A": "Guaranteed placement",
+      "B": "Higher placement chances",
+      "C": "Lower school fees",
+      "D": "Free school supplies"
+    },
+    "answer": "B"
+  },
+  {
+    "question": "Which of the following does BPS consider in sibling preference?",
+    "options": {
+      "A": "Cousins",
+      "B": "Older siblings at the same school",
+      "C": "Friends",
+      "D": "Neighbors"
+    },
+    "answer": "B"
+  },
+  {
+    "question": "Which grade level is NOT included in BPS's priority registration?",
+    "options": {
+      "A": "K1",
+      "B": "Grade 6",
+      "C": "Grade 7",
+      "D": "K0"
+    },
+    "answer": "C"
+  },
+  {
+    "question": "What is the typical deadline for the first round of BPS registration?",
+    "options": {
+      "A": "February",
+      "B": "May",
+      "C": "October",
+      "D": "December"
+    },
+    "answer": "A"
+  },
+  {
+    "question": "What is a required immunization for BPS enrollment?",
+    "options": {
+      "A": "MMR (Measles, Mumps, Rubella)",
+      "B": "Flu shot",
+      "C": "COVID booster",
+      "D": "Malaria vaccine"
+    },
+    "answer": "A"
+  },
+  {
+    "question": "What is one of the languages BPS registration support is available in?",
+    "options": {
+      "A": "German",
+      "B": "Mandarin",
+      "C": "Spanish",
+      "D": "Italian"
+    },
+    "answer": "C"
+  },
+  {
+    "question": "What is the minimum age for K1 registration in BPS?",
+    "options": {
+      "A": "3 years",
+      "B": "4 years",
+      "C": "5 years",
+      "D": "6 years"
+    },
+    "answer": "B"
+  },
+  {
+    "question": "How many proofs of residency are required for registration?",
+    "options": {
+      "A": "1",
+      "B": "2",
+      "C": "3",
+      "D": "4"
+    },
+    "answer": "B"
+  },
+  {
+    "question": "Which of the following is a valid proof of age?",
+    "options": {
+      "A": "Library card",
+      "B": "Birth certificate",
+      "C": "School ID",
+      "D": "Bus pass"
+    },
+    "answer": "B"
+  },
+  {
+    "question": "What is required to update a student's address?",
+    "options": {
+      "A": "Driver\u2019s license only",
+      "B": "Phone bill only",
+      "C": "Two new proofs of residency",
+      "D": "Email notification"
+    },
+    "answer": "C"
+  }
+]
